@@ -110,8 +110,9 @@
     gap: 12px 18px;
   }
 
-  /* keep Status + Local time + links */
-  .metaItem:nth-child(2) {
+  /* one row: Status (left) + social icons (right) */
+  .metaItem:nth-child(2),
+  .metaItem:nth-child(3) {
     display: none;
   }
 
