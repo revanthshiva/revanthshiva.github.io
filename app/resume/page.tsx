@@ -12,7 +12,7 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const homeHref = `${base}/`;
 
 const summary =
-  "Full-stack developer and IT manager who builds the internal software a business runs on — operations and finance platforms, engineering portals, and AI tools that answer questions straight from the data — and keeps it fast, reliable and easy to change. 4+ years across React, Vue, Laravel, Python and Node, with a growing focus on LLM-powered tooling.";
+  "Full-stack developer and IT manager who builds the internal software a business runs on, from operations and finance platforms to engineering portals and AI tools that answer questions straight from the data, and keeps it fast, reliable and easy to change. 4+ years across React, Vue, Laravel, Python and Node, with a growing focus on LLM-powered tooling.";
 
 const skillGroups = ["Frontend", "Backend & data", "AI & automation", "Systems & security"];
 
@@ -35,6 +35,9 @@ export default function ResumePage() {
           <p className={s.role}>Full-stack Developer &amp; IT Manager</p>
           <ul className={s.contact}>
             <li>{profile.city}</li>
+            <li>
+              <a href="tel:+917010538733">+91 70105 38733</a>
+            </li>
             <li>
               <a href={`mailto:${profile.email}`}>{profile.email}</a>
             </li>
@@ -59,16 +62,16 @@ export default function ResumePage() {
               <div className={s.jobTop}>
                 <span className={s.org}>{e.org}</span>
                 <span className={s.when}>
-                  {e.type} · {e.when}
+                  {e.type}, {e.when}
                 </span>
               </div>
-              <p className={s.where}>{e.where}</p>
+              <p className={s.where}>{e.where.replace(" · ", ", ")}</p>
               <ul className={s.roles}>
                 {e.roles.map((r) => (
                   <li key={r.role}>
                     <span className={s.roleName}>{r.role}</span>
                     <span className={s.roleWhen}>
-                      {r.when} · {r.duration}
+                      {r.when} ({r.duration})
                     </span>
                   </li>
                 ))}
@@ -85,13 +88,13 @@ export default function ResumePage() {
         </section>
 
         <section className={s.block}>
-          <h2 className={s.h2}>Selected projects</h2>
+          <h2 className={s.h2}>Projects</h2>
           <ul className={s.projects}>
             {selectedProjects.map((c) => (
               <li key={c.title} className={s.project}>
                 <p className={s.projectHead}>
                   <span className={s.projectTitle}>{c.title}</span>
-                  <span className={s.projectStack}>{c.stack.join(" · ")}</span>
+                  <span className={s.projectStack}>{c.stack.join(", ")}</span>
                 </p>
                 <p className={s.projectSummary}>{c.summary}</p>
               </li>
@@ -119,7 +122,7 @@ export default function ResumePage() {
                 <li key={ed.title}>
                   <span className={s.eduTitle}>{ed.title}</span>
                   <span className={s.eduMeta}>
-                    {ed.school} · {ed.when}
+                    {ed.school}, {ed.when}
                   </span>
                 </li>
               ))}

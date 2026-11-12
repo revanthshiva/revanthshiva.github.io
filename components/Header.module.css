@@ -23,6 +23,20 @@
   pointer-events: none;
 }
 
+/* fade page content into the dial so it stays readable over any section */
+.dial::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 150%;
+  background: linear-gradient(to top, var(--bg) 18%, transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
 .curve {
   position: absolute;
   inset: 0;
@@ -135,17 +149,17 @@
 
 @media (max-width: 560px) {
   .dial {
-    height: 108px;
+    height: 116px;
   }
 
   .icon {
-    width: 30px;
-    height: 30px;
+    width: 33px;
+    height: 33px;
   }
 
   .dialNav a {
-    gap: 5px;
-    font-size: 0.625rem;
+    gap: 6px;
+    font-size: 0.7rem;
   }
 }
 

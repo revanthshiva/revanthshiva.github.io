@@ -1,5 +1,6 @@
 import Motion from "@/components/Motion";
 import Header from "@/components/Header";
+import Backdrop from "@/components/Backdrop";
 import Hero from "@/components/Hero";
 import Story from "@/components/Story";
 import Work from "@/components/Work";
@@ -11,7 +12,8 @@ export default function Home() {
     <>
       <Motion />
       <Header />
-      <main id="top">
+      <main id="top" style={{ position: "relative" }}>
+        <Backdrop />
         <Hero />
         <Story />
         <Work />

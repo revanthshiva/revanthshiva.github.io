@@ -1,0 +1,31 @@
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.word {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: clamp(6rem, 20vw, 22rem);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(243, 241, 234, 0.04);
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.plus {
+  position: absolute;
+  font-family: var(--font-d);
+  font-weight: 300;
+  font-size: 1.7rem;
+  color: rgba(243, 241, 234, 0.18);
+  will-change: transform;
+}

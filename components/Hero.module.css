@@ -3,7 +3,7 @@
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding: 150px var(--gutter) 130px;
+  padding: 150px var(--gutter) 84px;
   overflow: clip;
 }
 
@@ -435,6 +435,11 @@
 }
 
 @media (max-width: 560px) {
+  .hero {
+    min-height: auto;
+    padding: 104px var(--gutter) 48px;
+  }
+
   .p3 {
     display: none;
   }
