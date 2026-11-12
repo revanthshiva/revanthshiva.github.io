@@ -3,7 +3,8 @@
 // Prefix for files in /public so they resolve when the site is hosted under a
 // sub-path (e.g. GitHub Pages: /<repo>/). Set via NEXT_PUBLIC_BASE_PATH in CI.
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-export const resumeHref = `${base}/Revanth_Shiva_Resume.pdf`;
+// Dynamic résumé page generated from this data (see app/resume).
+export const resumeHref = `${base}/resume/`;
 
 export const profile = {
   name: "Revanth Shiva",
@@ -14,7 +15,7 @@ export const profile = {
   email: "revanthshiva3@gmail.com",
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/revanthshiva/" },
-    { label: "Resume (PDF)", href: resumeHref },
+    { label: "Résumé", href: resumeHref },
   ],
 };
 

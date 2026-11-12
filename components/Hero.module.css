@@ -3,62 +3,135 @@
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding: 118px var(--gutter) 72px;
+  padding: 150px var(--gutter) 130px;
   overflow: clip;
 }
 
-/* ---------- top bar: wordmark + live clock ---------- */
+/* ---------- top info strip ---------- */
 
-.topbar {
+.metabar {
   position: absolute;
-  top: 38px;
+  top: 40px;
   left: var(--gutter);
   right: var(--gutter);
   z-index: 2;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  gap: 18px 48px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
 }
 
-.wordmark {
-  font-family: var(--font-d);
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.01em;
+.metaLinks {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.metaIcon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
   color: var(--cream);
-  text-decoration: none;
-  transition: color 0.18s;
+  transition: color 0.18s, border-color 0.18s, background-color 0.18s;
 }
 
-.wordmark:hover {
+.metaIcon:hover {
   color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
-.clock {
+.metaItem {
+  display: grid;
+  gap: 4px;
+}
+
+.metaLabel {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.metaValue {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  font-size: 0.85rem;
-  color: var(--muted);
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.metaMono {
   font-variant-numeric: tabular-nums;
 }
 
-.clockDot {
-  width: 6px;
-  height: 6px;
+.statusDot {
+  position: relative;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 70%, transparent);
+  background: #35d07f;
 }
 
-@media (max-width: 480px) {
-  .topbar {
-    top: 30px;
+.statusDot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid #35d07f;
+  opacity: 0;
+  animation: statusPing 2.4s ease-out infinite;
+}
+
+@keyframes statusPing {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@media (max-width: 760px) {
+  .metabar {
+    gap: 14px 28px;
   }
 
-  .clockCity {
+  /* drop "Currently" first */
+  .metaItem:nth-child(4) {
     display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .metabar {
+    top: 28px;
+    gap: 12px 18px;
+  }
+
+  /* keep Status + Local time + links */
+  .metaItem:nth-child(2) {
+    display: none;
+  }
+
+  .metaLabel {
+    font-size: 0.7rem;
+  }
+
+  .metaValue {
+    font-size: 0.85rem;
+  }
+
+  .metaIcon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statusDot::after {
+    animation: none;
   }
 }
 

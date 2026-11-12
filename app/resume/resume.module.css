@@ -1,0 +1,340 @@
+.page {
+  --paper: #f4f1ea;
+  --ink: #1b1b22;
+  --soft: #5c5c66;
+  --accent: #ff5a30;
+  --rule: rgba(27, 27, 34, 0.12);
+
+  min-height: 100vh;
+  background: #0b0b0f;
+  padding: 28px 16px 72px;
+  color: var(--ink);
+}
+
+/* ---------- toolbar (screen only) ---------- */
+
+.toolbar {
+  max-width: 820px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.back {
+  color: #f3f1ea;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  transition: color 0.18s, opacity 0.18s;
+}
+
+.back:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.print {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #1a0b06;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.6em 1.3em;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.print:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* ---------- sheet ---------- */
+
+.sheet {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--paper);
+  border-radius: 14px;
+  padding: clamp(28px, 5vw, 56px);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.7);
+}
+
+.head {
+  padding-bottom: 22px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-d), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.role {
+  margin: 8px 0 14px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+.contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-size: 0.9rem;
+  color: var(--soft);
+}
+
+.contact a {
+  color: var(--soft);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: var(--accent);
+}
+
+/* ---------- blocks ---------- */
+
+.block {
+  margin-top: 28px;
+}
+
+.h2 {
+  margin: 0 0 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.summary {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  max-width: 64ch;
+}
+
+/* experience */
+
+.job {
+  margin-bottom: 22px;
+}
+
+.job:last-child {
+  margin-bottom: 0;
+}
+
+.jobTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+}
+
+.org {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.when {
+  font-size: 0.875rem;
+  color: var(--soft);
+}
+
+.where {
+  margin: 2px 0 0;
+  font-size: 0.875rem;
+  color: var(--soft);
+}
+
+.roles {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.roles li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+}
+
+.roleName {
+  font-weight: 600;
+}
+
+.roleWhen {
+  font-size: 0.85rem;
+  color: var(--soft);
+}
+
+.points {
+  margin: 10px 0 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 5px;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.points li {
+  padding-left: 2px;
+}
+
+/* projects */
+
+.projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.projectHead {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 16px;
+}
+
+.projectTitle {
+  font-weight: 700;
+}
+
+.projectStack {
+  font-size: 0.8rem;
+  color: var(--soft);
+}
+
+.projectSummary {
+  margin: 3px 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: #33333c;
+}
+
+/* skills */
+
+.skills {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.skillRow {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 8px 20px;
+  align-items: baseline;
+}
+
+.skillRow dt {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.skillRow dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: #33333c;
+}
+
+/* education + languages */
+
+.twoCol {
+  display: grid;
+  gap: 28px 48px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.edu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.edu li {
+  display: grid;
+  gap: 2px;
+}
+
+.eduTitle {
+  font-weight: 700;
+}
+
+.eduMeta {
+  font-size: 0.875rem;
+  color: var(--soft);
+}
+
+.languages {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 620px) {
+  .skillRow {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- print ---------- */
+
+@media print {
+  .page {
+    background: #fff;
+    padding: 0;
+  }
+
+  .toolbar {
+    display: none;
+  }
+
+  .sheet {
+    max-width: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  .contact a,
+  .back {
+    color: var(--ink);
+  }
+
+  .job,
+  .project {
+    break-inside: avoid;
+  }
+}

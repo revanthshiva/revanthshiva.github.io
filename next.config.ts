@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   // Static HTML/CSS/JS export (out/) — deployable to GitHub Pages or any static host.
   output: "export",
   basePath,
+  // Emit each route as a folder/index.html so static hosts serve /resume/ cleanly.
+  trailingSlash: true,
   images: { unoptimized: true },
 };
 

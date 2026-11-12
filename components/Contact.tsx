@@ -32,7 +32,7 @@ const MailIcon = () => (
 
 const tiles = [
   { label: "LinkedIn", sub: "Connect with me", href: "https://www.linkedin.com/in/revanthshiva/", external: true, icon: <LinkedInIcon /> },
-  { label: "Resume", sub: "Download the PDF", href: resumeHref, external: true, icon: <DocIcon /> },
+  { label: "Résumé", sub: "View & download", href: resumeHref, external: true, icon: <DocIcon /> },
   { label: "Email", sub: profile.email, href: `mailto:${profile.email}`, external: false, icon: <MailIcon /> },
 ];
 

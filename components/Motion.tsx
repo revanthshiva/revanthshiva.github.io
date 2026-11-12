@@ -19,7 +19,13 @@ export default function Motion() {
     let tick: ((t: number) => void) | null = null;
 
     if (!reduce) {
-      lenis = new Lenis({ lerp: 0.1 });
+      lenis = new Lenis({
+        lerp: 0.075, // lower = smoother, more gliding inertia
+        smoothWheel: true,
+        wheelMultiplier: 0.95,
+        touchMultiplier: 1.6,
+        syncTouch: true,
+      });
       lenis.on("scroll", ScrollTrigger.update);
       tick = (t) => lenis!.raf(t * 1000);
       gsap.ticker.add(tick);
@@ -46,7 +52,14 @@ export default function Motion() {
         };
         loop();
       };
-      if (lenis) lenis.scrollTo(target, { offset: 0, immediate, onComplete: settle });
+      if (lenis)
+        lenis.scrollTo(target, {
+          offset: 0,
+          immediate,
+          duration: 1.2,
+          easing: (t) => 1 - Math.pow(1 - t, 3),
+          onComplete: settle,
+        });
       else if (immediate) {
         window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY);
         settle();
@@ -62,8 +75,8 @@ export default function Motion() {
       gsap.to(root, {
         "--bg": el.dataset.bg,
         "--fg": el.dataset.fg,
-        duration: reduce ? 0 : 0.6,
-        ease: "power2.out",
+        duration: reduce ? 0 : 0.9,
+        ease: "power2.inOut",
         overwrite: true,
       });
 
