@@ -32,10 +32,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # User site (revanthshiva.github.io) is served at the root, so no basePath.
       - name: Build static export
-        env:
-          # Serve correctly under https://<user>.github.io/<repo>/
-          NEXT_PUBLIC_BASE_PATH: /revanth-portfolio
         run: npm run build
 
       - name: Disable Jekyll processing
