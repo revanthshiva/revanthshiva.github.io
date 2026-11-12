@@ -4,8 +4,8 @@ import PrintButton from "@/components/PrintButton";
 import s from "./resume.module.css";
 
 export const metadata: Metadata = {
-  title: "Revanth Shiva — Résumé",
-  description: "Résumé of Revanth Shiva, full-stack developer & IT manager.",
+  title: "Revanth Shiva — Resume",
+  description: "Resume of Revanth Shiva, full-stack developer & IT manager.",
 };
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -16,7 +16,7 @@ const summary =
 
 const skillGroups = ["Frontend", "Backend & data", "AI & automation", "Systems & security"];
 
-// A focused selection of built products for a one–two page résumé.
+// A focused selection of built products for a one–two page resume.
 const selectedProjects = capabilities.slice(0, 6);
 
 export default function ResumePage() {

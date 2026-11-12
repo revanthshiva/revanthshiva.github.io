@@ -30,10 +30,17 @@ const MailIcon = () => (
   </svg>
 );
 
+const PhoneIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 1-2z" />
+  </svg>
+);
+
 const tiles = [
   { label: "LinkedIn", sub: "Connect with me", href: "https://www.linkedin.com/in/revanthshiva/", external: true, icon: <LinkedInIcon /> },
-  { label: "Résumé", sub: "View & download", href: resumeHref, external: true, icon: <DocIcon /> },
+  { label: "Resume", sub: "View & download", href: resumeHref, external: true, icon: <DocIcon /> },
   { label: "Email", sub: profile.email, href: `mailto:${profile.email}`, external: false, icon: <MailIcon /> },
+  { label: "Phone", sub: "+91 70105 38733", href: "tel:+917010538733", external: false, icon: <PhoneIcon /> },
 ];
 
 export default function Contact() {

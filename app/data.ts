@@ -1,9 +1,9 @@
-// All site content lives here. Taken from Revanth's résumé (Nov 2026).
+// All site content lives here. Taken from Revanth's resume (Nov 2026).
 
 // Prefix for files in /public so they resolve when the site is hosted under a
 // sub-path (e.g. GitHub Pages: /<repo>/). Set via NEXT_PUBLIC_BASE_PATH in CI.
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-// Dynamic résumé page generated from this data (see app/resume).
+// Dynamic resume page generated from this data (see app/resume).
 export const resumeHref = `${base}/resume/`;
 
 export const profile = {
@@ -15,7 +15,7 @@ export const profile = {
   email: "revanthshiva3@gmail.com",
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/revanthshiva/" },
-    { label: "Résumé", href: resumeHref },
+    { label: "Resume", href: resumeHref },
   ],
 };
 
