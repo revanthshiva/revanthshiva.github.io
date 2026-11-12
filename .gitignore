@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Unused personal portrait (not referenced by the site)
+/public/revanth-cutout.png

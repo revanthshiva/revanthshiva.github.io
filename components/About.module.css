@@ -1,0 +1,84 @@
+.about {
+  padding: 16vh 0 14vh;
+  overflow: clip;
+}
+
+.intro {
+  padding: 0 var(--gutter);
+  display: grid;
+  gap: 28px 64px;
+  margin-bottom: 12vh;
+}
+
+@media (min-width: 900px) {
+  .intro {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+}
+
+.h2 {
+  font-family: var(--font-d);
+  font-weight: 600;
+  font-size: clamp(2.25rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.text {
+  display: grid;
+  gap: 1.1em;
+  max-width: 34em;
+  font-size: clamp(1.125rem, 1.5vw, 1.3125rem);
+  line-height: 1.55;
+}
+
+.facts {
+  margin: 12px 0 0;
+  display: grid;
+  gap: 14px;
+  font-size: 1rem;
+}
+
+.facts dt {
+  font-weight: 700;
+}
+
+.facts dd {
+  color: var(--muted);
+}
+
+.rows {
+  display: grid;
+  gap: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  will-change: transform;
+}
+
+.skill {
+  padding: 0.35em 0.8em 0.4em;
+  border-radius: 999px;
+  font-family: var(--font-d);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 4.5vw, 4rem);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  color: var(--fg);
+  border: 1.5px solid var(--line);
+}
+
+.row:nth-child(3) .skill {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a0b06;
+}
+
+.row:nth-child(4) .skill {
+  background: var(--panel-2);
+  border-color: transparent;
+  color: var(--fg);
+}

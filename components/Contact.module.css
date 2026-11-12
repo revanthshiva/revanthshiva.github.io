@@ -1,0 +1,228 @@
+.contact {
+  min-height: 100vh;
+  /* extra bottom space so the fixed dial never covers the footer */
+  padding: 16vh var(--gutter) 150px;
+  display: grid;
+  align-content: start;
+  gap: 24px;
+}
+
+.big {
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 7.8vw, 7.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.line {
+  display: block;
+  will-change: transform;
+}
+
+.line:nth-child(2) {
+  padding-left: 0.6em;
+}
+
+.line:nth-child(3) {
+  color: var(--sun);
+}
+
+.lead {
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  max-width: 28em;
+  margin-top: 4px;
+}
+
+/* ---------- layout ---------- */
+
+.grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (min-width: 880px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+}
+
+/* ---------- form ---------- */
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.row {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 560px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field > span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(243, 241, 255, 0.28);
+  background: rgba(243, 241, 255, 0.08);
+  color: var(--paper);
+  font: inherit;
+  font-size: 1rem;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 108px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(243, 241, 255, 0.45);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--sun);
+  background: rgba(243, 241, 255, 0.12);
+}
+
+.submit {
+  justify-self: start;
+  padding: 0.95em 1.8em;
+  border: none;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.15s;
+}
+
+.submit:hover {
+  background: var(--sun);
+  transform: translateY(-2px);
+}
+
+.note {
+  font-size: 0.875rem;
+  opacity: 0.85;
+  max-width: 34em;
+}
+
+/* ---------- big icon tiles ---------- */
+
+.tiles {
+  display: grid;
+  gap: 12px;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(243, 241, 255, 0.22);
+  background: rgba(243, 241, 255, 0.06);
+  text-decoration: none;
+  color: var(--paper);
+  transition: background-color 0.18s, border-color 0.18s, transform 0.18s;
+}
+
+.tile:hover {
+  background: rgba(243, 241, 255, 0.12);
+  border-color: rgba(243, 241, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.tileIcon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--cobalt);
+}
+
+.tileIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.tile:hover .tileIcon {
+  background: var(--sun);
+  color: var(--ink);
+}
+
+.tileText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.tileLabel {
+  font-family: var(--font-d);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.tileSub {
+  font-size: 0.9375rem;
+  opacity: 0.7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tileArrow {
+  margin-left: auto;
+  font-size: 1.25rem;
+  opacity: 0.5;
+  transition: opacity 0.18s, transform 0.18s;
+}
+
+.tile:hover .tileArrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  margin-top: 12vh;
+  padding-top: 24px;
+  border-top: 1px solid rgba(243, 241, 255, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
