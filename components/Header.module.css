@@ -32,7 +32,7 @@
   transform: translateX(-50%);
   width: 100vw;
   height: 150%;
-  background: linear-gradient(to top, var(--bg) 18%, transparent);
+  background: linear-gradient(to top, var(--bg) 20%, transparent);
   pointer-events: none;
   z-index: -1;
 }
@@ -150,6 +150,12 @@
 @media (max-width: 560px) {
   .dial {
     height: 116px;
+  }
+
+  /* solid backing so hero text goes behind the nav, not into it */
+  .dial::before {
+    height: 180%;
+    background: linear-gradient(to top, var(--bg), var(--bg) 60%, transparent);
   }
 
   .icon {
