@@ -166,9 +166,6 @@ export default function Hero() {
             <a className={s.secondary} href="#contact">
               Get in touch
             </a>
-            <a className={s.secondary} href="tel:+917010538733">
-              Call <span aria-hidden="true">↗</span>
-            </a>
           </div>
         </div>
 
