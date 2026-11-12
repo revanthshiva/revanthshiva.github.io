@@ -3,7 +3,7 @@
 }
 
 .pin {
-  padding: 14vh 0 10vh;
+  padding: 9vh 0 7vh;
   overflow: clip;
 }
 
@@ -36,7 +36,7 @@
 @media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
   .pin {
     height: 100vh;
-    padding: 12vh 0 0;
+    padding: 9vh 0 0;
     display: flex;
     flex-direction: column;
   }
@@ -187,7 +187,7 @@
 /* ---------- experience ---------- */
 
 .exp {
-  padding: 14vh var(--gutter) 16vh;
+  padding: 9vh var(--gutter) 11vh;
   max-width: 76rem;
 }
 

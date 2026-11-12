@@ -1,7 +1,7 @@
 .contact {
   min-height: 100vh;
   /* extra bottom space so the fixed dial never covers the footer */
-  padding: 16vh var(--gutter) 150px;
+  padding: 10vh var(--gutter) 150px;
   display: grid;
   align-content: start;
   gap: 24px;
@@ -216,7 +216,7 @@
 /* ---------- footer ---------- */
 
 .footer {
-  margin-top: 12vh;
+  margin-top: 7vh;
   padding-top: 24px;
   border-top: 1px solid rgba(243, 241, 255, 0.25);
   display: flex;

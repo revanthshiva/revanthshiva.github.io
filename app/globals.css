@@ -47,7 +47,12 @@ html.lenis body {
 
 body {
   margin: 0;
-  background: var(--bg);
+  /* ambient orange gradient over the animated scene colour */
+  background:
+    radial-gradient(1100px 760px at 88% -6%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 60%),
+    radial-gradient(900px 640px at -8% 106%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 58%),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--fg);
   font-family: var(--font-b);
   font-size: 1.0625rem;
