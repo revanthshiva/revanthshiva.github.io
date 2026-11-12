@@ -85,6 +85,7 @@ export default function Header() {
                   href={`#${id}`}
                   className={active === id ? s.navOn : undefined}
                   aria-current={active === id ? "true" : undefined}
+                  onMouseDown={(e) => e.preventDefault()}
                   {...(id === "top" ? { "data-scroll-instant": "" } : {})}
                 >
                   <span className={s.dot} aria-hidden="true" />

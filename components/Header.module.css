@@ -111,10 +111,23 @@
   box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 75%, transparent);
 }
 
+/* keyboard focus: a clean underline + lit dot, not a boxy outline */
 .dialNav a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
-  border-radius: 6px;
+  outline: none;
+  color: var(--fg);
+}
+
+.dialNav a:focus-visible .dot {
+  opacity: 1;
+  transform: scale(1.4);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--fg) 45%, transparent);
+}
+
+.dialNav a:focus-visible .navLabel {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 }
 
 @media (max-width: 560px) {
