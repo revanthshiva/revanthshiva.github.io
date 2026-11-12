@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { profile, heroStats } from "@/app/data";
@@ -11,6 +11,22 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
+  const [time, setTime] = useState<string>("");
+
+  // Live Bengaluru (IST) clock — set after mount to avoid hydration mismatch.
+  useEffect(() => {
+    const fmt = () =>
+      new Intl.DateTimeFormat("en-GB", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+        timeZone: "Asia/Kolkata",
+      }).format(new Date());
+    setTime(fmt());
+    const id = setInterval(() => setTime(fmt()), 1000);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     const mm = gsap.matchMedia();
@@ -63,6 +79,17 @@ export default function Hero() {
         <span className={`${s.layer} ${s.plus} ${s.p1}`} data-depth="3">+</span>
         <span className={`${s.layer} ${s.plus} ${s.p2}`} data-depth="6">+</span>
         <span className={`${s.layer} ${s.plus} ${s.p3}`} data-depth="4">+</span>
+      </div>
+
+      <div className={`${s.topbar} ${s.fade}`}>
+        <a href="#top" className={s.wordmark} data-scroll-instant="">
+          Revanth&nbsp;Shiva
+        </a>
+        <span className={s.clock}>
+          <span className={s.clockDot} aria-hidden="true" />
+          <span className={s.clockCity}>Bengaluru&nbsp;·&nbsp;</span>
+          {time || "--:--:--"} IST
+        </span>
       </div>
 
       <div className={s.grid}>

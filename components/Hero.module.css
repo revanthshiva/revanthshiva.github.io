@@ -7,6 +7,61 @@
   overflow: clip;
 }
 
+/* ---------- top bar: wordmark + live clock ---------- */
+
+.topbar {
+  position: absolute;
+  top: 38px;
+  left: var(--gutter);
+  right: var(--gutter);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.wordmark {
+  font-family: var(--font-d);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.wordmark:hover {
+  color: var(--accent);
+}
+
+.clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.clockDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    top: 30px;
+  }
+
+  .clockCity {
+    display: none;
+  }
+}
+
 /* ---------- parallax backdrop ---------- */
 
 .bg {
