@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { profile } from "@/app/data";
+import { profile, resumeHref } from "@/app/data";
 import s from "./Contact.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -32,7 +32,7 @@ const MailIcon = () => (
 
 const tiles = [
   { label: "LinkedIn", sub: "Connect with me", href: "https://www.linkedin.com/in/revanthshiva/", external: true, icon: <LinkedInIcon /> },
-  { label: "Resume", sub: "Download the PDF", href: "/Revanth_Shiva_Resume.pdf", external: true, icon: <DocIcon /> },
+  { label: "Resume", sub: "Download the PDF", href: resumeHref, external: true, icon: <DocIcon /> },
   { label: "Email", sub: profile.email, href: `mailto:${profile.email}`, external: false, icon: <MailIcon /> },
 ];
 
